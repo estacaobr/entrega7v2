@@ -1,0 +1,43 @@
+
+#rectangle1 {
+    width:100%;
+    height:80px;
+    background:#1c1c1c;
+}
+
+#config-color{
+    color:#FFFFFF;
+
+}
+#pink-rectangle {
+    width:70%;
+    height:100%;
+    background:#bb86fc;
+    margin-top: -20px;
+}
+
+#grey-rectangule{
+    width:100%;
+    height:750px;
+    background:#969ab0;
+}
+
+#table-title-background{
+    background-color: #707070;
+    height:55px;
+    width:450px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: -8px;
+  }
+
+#email-box{
+    width: 500px;
+    }
+
+#update{
+    width: 250px;
+}
