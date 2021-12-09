@@ -6,15 +6,8 @@
       "valorVenda": 29.9,
       "status": true,
       "descricao": "te roubei ce nem viu",
-      "imagem": "./../../assets/img/books/arseneLupin.jpg"
-    },
-    {
-      "id": 2,
-      "nome": "O Hobbit",
-      "valorVenda": 39.9,
-      "status": true,
-      "descricao": "anão do pé grande",
-      "imagem": "./../../assets/img/books/oHobbit.jpg"
+      "imagem": "./../../assets/img/books/arseneLupin.jpg",
+      "tipo": "Livro"
     },
     {
       "id": 3,
@@ -22,7 +15,8 @@
       "valorVenda": 139.9,
       "status": true,
       "descricao": "dsadasd",
-      "imagem": "./../../assets/img/books/mundoAssombrado.jpg"
+      "imagem": "./../../assets/img/books/mundoAssombrado.jpg",
+      "tipo": "Livro"
     },
     {
       "id": 4,
@@ -30,7 +24,8 @@
       "valorVenda": 139.9,
       "status": true,
       "descricao": "legolas",
-      "imagem": "./../../assets/img/books/rangers.png"
+      "imagem": "./../../assets/img/books/rangers.png",
+      "tipo": "Livro"
     },
     {
       "id": 5,
@@ -38,33 +33,66 @@
       "valorVenda": 139.9,
       "status": true,
       "descricao": "do pó viemos, e ao pó retornarás",
-      "imagem": "./../../assets/img/books/sapiens.jpg"
+      "imagem": "./../../assets/img/books/sapiens.jpg",
+      "tipo": "Livro"
+    },
+    {
+      "id": 7,
+      "nome": "Spider Man",
+      "valorVenda": 109.99,
+      "status": false,
+      "descricao": "Teia",
+      "imagem": "./../../assets/img/games/spiderman.png",
+      "tipo": "Jogo"
+    },
+    {
+      "id": 8,
+      "nome": "Red Dead Redemption 2",
+      "valorVenda": 99,
+      "status": false,
+      "descricao": "Faroeste",
+      "imagem": "./../../assets/img/games/rdr2.png",
+      "tipo": "Jogo"
     }
   ],
   "usuarios": [
     {
       "id": 1,
-      "nome": "Leo Teste",
+      "nome": "Leo",
+      "sobrenome": "Teste",
+      "endereco": {
+        "pais": "brasil",
+        "cidade": "bh",
+        "rua": "adasdsa",
+        "bairro": "x"
+      },
+      "idade": 29,
+      "sexo": "Masculino",
       "email": "leo@teste.com",
-      "senha": "123"
+      "senha": "123",
+      "carrinho": []
     },
     {
       "id": 2,
-      "nome": "TESTE2",
-      "email": "leo@teste2.com",
-      "senha": "2525"
+      "nome": "user2",
+      "sobrenome": "",
+      "endereco": [],
+      "idade": 22,
+      "sexo": "",
+      "email": "user2@mail.com",
+      "senha": "1234",
+      "carrinho": []
     },
     {
       "id": 3,
-      "nome": "tchevitchenko",
-      "email": "123@123.com",
-      "senha": "abelha"
-    },
-    {
-      "id": 4,
-      "nome": "teste",
-      "email": "email@mail.com",
-      "senha": "555"
+      "nome": "Brasil",
+      "sobrenome": "",
+      "endereco": [],
+      "idade": 11,
+      "sexo": "",
+      "email": "leo@agoravai.com",
+      "senha": "123",
+      "carrinho": []
     }
   ]
 }

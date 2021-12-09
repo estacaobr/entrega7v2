@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -16,6 +16,7 @@ import { ProductdescriptionComponent } from './productdescription/productdescrip
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { GamePageComponent } from './game-page/game-page.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,15 @@ import { SignInComponent } from './sign-in/sign-in.component';
     ProductdescriptionComponent,
     UpdateProductComponent,
     NewProductComponent,
-    SignInComponent
+    SignInComponent,
+    GamePageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,29 +1,63 @@
-<div class="container ">
-    <h1>Cadastro de Usuario</h1>
-    <div class="row mt-3 justify-content-center">
-      
+<div class="container" >
+    <h1 align = "center">Cadastro de Usuario</h1>
+    <div class="row mt-6 justify-content-center">
+
         <div class="col-9">
-          <form>
+          <form [formGroup]="form" (submit)="submit()">
+
             <div class="form-group">
-              <label for="nome">Nome</label>
-              <input type="text" class="form-control" id="nome" name="nome"
-              [(ngModel)]="usuario.nome">
+              <label for="nome">Nome:</label>
+              <input type="text" class="form-control" id="nome" name="nome" formControlName = "nome" required>
+              <div class="alert alert-primary" *ngIf="(form.get('nome')?.errors?.required || form.get ('nome')?.errors?.minglength || form.get ('nome')?.errors?.maxlength)">
+                Informe o seu nome (3 a 35 caracteres)!
+              </div>
             </div>
-      
+
             <div class="form-group">
-              <label for="preco">Email</label>
-              <input type="email" class="form-control" id="email" name="email"
-              [(ngModel)]="usuario.email">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" name="email" formControlName = "email" requiered>
+              <div class="alert alert-primary" *ngIf="(form.get('email')?.errors?.required || form.get ('email')?.errors?.minglength || form.get ('email')?.errors?.maxlength)">
+                Informe o e-mail corretamente (De 8 até 40 caracteres)
+              </div>
             </div>
-      
+
             <div class="form-group">
-              <label for="preco">Senha</label>
-              <input type="password" class="form-control" id="senha" name="senha"
-              [(ngModel)]="usuario.senha">
+              <label for="senha">Senha:</label>
+              <input type="password" class="form-control" id="senha" name="senha" formControlName = "senha" requiered>
+              <div class="alert alert-primary" *ngIf="(form.get('senha')?.errors?.required || form.get ('senha')?.errors?.minglength || form.get ('senha')?.errors?.maxlength)">
+                Informe sua senha: (Mínimo 6 caracteres)!
+              </div>
             </div>
-      
-      
-            <button (click)="cadastrar()" type="button" class="btn btn-primary">
+
+            <div class="form-group">
+              <label for="idade">Idade:</label>
+              <input type="number" class="form-control" id="idade" name="idade" formControlName = "idade" requiered>
+              <div class="alert alert-primary" *ngIf="(form.get('idade')?.errors?.required || form.get ('idade')?.errors?.minglength || form.get ('idade')?.errors?.maxlength && form.get('idade')?.errors?.min)">
+                Informe sua idade (Até 2 caracteres)!
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label for="pais">País: </label>
+              <input type="text" class="form-control" id="pais" name="pais" formControlName = "pais" requiered>
+
+              <div class="alert alert-primary" *ngIf="(form.get('pais')?.errors?.required || form.get ('pais')?.errors?.minglength || form.get ('pais')?.errors?.maxlength)">
+                Informe o seu país (4 a 16 caracteres)!
+              </div>
+
+
+              <label for="rua">Rua: </label>
+              <input type="text" class="form-control" id="rua" name="rua" formControlName = "rua" requiered>
+
+              <div class="alert alert-primary" *ngIf="(form.get('rua')?.errors?.required || form.get ('rua')?.errors?.minglength || form.get ('rua')?.errors?.maxlength)">
+                Informe sua Rua (4 a 100 caracteres)!
+              </div>
+
+            </div>
+
+
+            <button (click)="submit()" type="submit" class="btn btn-primary">
               Cadastrar
             </button>
           </form>

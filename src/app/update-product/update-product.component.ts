@@ -11,7 +11,7 @@ import { Produto } from '../model/produto.model';
 })
 export class UpdateProductComponent implements OnInit {
   public produto!: Produto;
-  
+
   constructor(private itensService: ItensService,
               private rotaAtiva: ActivatedRoute,
               private rota: Router) { }
@@ -26,23 +26,36 @@ export class UpdateProductComponent implements OnInit {
 
   public atualizar() {
     if (this.produto.id) {
-      this.itensService.update(this.produto).subscribe((response)=>{
-        console.log(response);
-        this.rota.navigate(['/itempage']);
-      });
-      
-    } else {
-      alert('Verifique se todos os campos estão preenchido!');
+      if(this.produto.tipo == 'Livro'){
+        this.itensService.update(this.produto).subscribe((response)=>{
+          console.log(response);
+          this.rota.navigate(['/itempage']);
+        });
+      }else if(this.produto.tipo == 'Jogo'){
+        this.itensService.update(this.produto).subscribe((response)=>{
+          console.log(response);
+          this.rota.navigate(['/gamepage']);
+        });
+      } else {
+          alert('Verifique se todos os campos estão preenchido!');
+        }
     }
   }
-
   public deletar() {
+    if(this.produto.tipo == 'Livro'){
     if (this.produto.id || this.produto.id === 0) {
       this.itensService.delete(this.produto.id).subscribe((response)=>{
         this.rota.navigate(['/itempage']);
       });
-      
     }
+    }if(this.produto.tipo == 'Jogo'){
+      if (this.produto.id || this.produto.id === 0) {
+        this.itensService.delete(this.produto.id).subscribe((response)=>{
+          this.rota.navigate(['/gamepage']);
+        });
+      }
+    }
+
   }
 
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuardService } from './auth/auth-guard.service';
@@ -11,6 +11,7 @@ import { ProductdescriptionComponent } from './productdescription/productdescrip
 import { ItemPageComponent} from './item-page/item-page.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { GamePageComponent } from './game-page/game-page.component';
 const routes: Routes = [
   {
     path: '',
@@ -20,7 +21,7 @@ const routes: Routes = [
   {
     path: 'newproduct',
     component: NewProductComponent,
-    canActivate: [AuthGuardService]
+    canActivateChild: [AuthGuardService]
   },
   {
     path: 'updateproduct/:id',
@@ -35,11 +36,12 @@ const routes: Routes = [
     component: LoginPageComponent
   },
   {
-    path: 'configuracoes',
-    component: ConfiguracoesComponent
+    path: 'configuracoes/:id',
+    component: ConfiguracoesComponent,
+    canActivateChild: [AuthGuardService]
   },
   {
-    path: 'productdescription',
+    path: 'productdescription/:id',
     component: ProductdescriptionComponent
   },
   {
@@ -49,6 +51,10 @@ const routes: Routes = [
   {
     path: 'signin',
     component: SignInComponent
+  },
+  {
+    path:'gamepage',
+    component: GamePageComponent
   }
 ];
 

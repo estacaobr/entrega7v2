@@ -15,5 +15,4 @@ export class HeaderComponent implements OnInit {
     this.usuario = this.authServices.getUserAtual();
     console.log(this.usuario);
   }
-
 }

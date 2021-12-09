@@ -1,0 +1,47 @@
+<!-- <button (click)="mensagem()" type="button">
+    Mensagem
+</button> -->
+<body>
+  <div class="text-center">
+      <h1>Lista de Jogos</h1>
+  </div>
+
+
+  <div class="container">
+    <div class="text-left mt-5">
+      <h2>Promoções</h2>
+      <button type="button" class="btn btn-success" [routerLink]="['/newproduct']">Cadastrar Produto</button>
+    </div>
+
+    <div class="row d-flex p-2">
+
+      <div class="col-sm-4 mb-3" *ngFor="let obj of produtosLista">
+        <!-- <div *ngIf = "obj.tipo == 'Jogo'"> -->
+        <div class="card" style="width: 18rem;">
+          <img [src]="obj.imagem" class="card-img-top" alt="produto orgânico">
+          <div class="card-body">
+            <h5 class="card-title"> {{obj.nome | titlecase}} </h5>
+            <p class="card-text"> {{obj.descricao | uppercase}}.</p>
+            <h6>{{obj.valorVenda | currency:'BRL'}}</h6>
+            <button type="button" class="btn btn-warning btn-block"
+            [routerLink]="['/updateproduct', obj.id]">
+              Editar
+            </button>
+
+
+            <button type="button" class="btn btn-success btn-block"
+            [routerLink]="['/productdescription', obj.id]">
+              Comprar
+            </button>
+
+          </div>
+        </div>
+        </div>
+
+      <!-- </div> -->
+
+    </div>
+  </div>
+  </body>
+
+

@@ -9,7 +9,7 @@ import { ItensService } from './../services/itens.service'
   styleUrls: ['./item-page.component.css']
 })
 export class ItemPageComponent implements OnInit {
-  
+
   public produtosLista: Array<Produto> = [];
 
   public produto: Produto = new Produto();
@@ -19,7 +19,9 @@ export class ItemPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.ItensService.getAll().subscribe( (produtos: Produto[])=> {
-      this.produtosLista = produtos;
+      this.produtosLista = produtos.filter((produtosJogos) => {
+        return produtosJogos.tipo == "Livro";
+      });;
     } );
   }
 
