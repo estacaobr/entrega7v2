@@ -1,90 +1,75 @@
 <div class=background>
-<div class="container">
-<!-- Card do produto que está a venda -->
-<div class="col-sm-8">
-    <div class="text-center">
-        <h1>Resident Evil Village</h1>
-          <br>
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-6 col-md-3">
-                      <img src="https://images-americanas.b2w.io/produtos/01/00/img/3161553/8/3161553837_1SZ.jpg" class= "text-center" width="250" height="250" alt="Camiseta azul" />
-                </div>
-              </div>
-            </div>
-
-          <br>
-            <h3>R$ 200,00</h3>
-            <a href="#" class="btn btn-primary btn-lg"> Adicionar ao Carrinho </a>
-  </div>
-
-<!-- Quebra de linha -->
-<br>
-
-<!-- Link para abrir a descrição do produto -->
-  <ul class="nav nav-tabs">
-    <li class="nav active">
-        <a href="#descricao" data-toggle="tab">Descrição</a>
-    </li>
-  </ul>
-
-<!-- Descrição do produto -->
-  <div class="tab-content">
-    <div class="tab-pane fade in active" id="descricao">
-      <p> Ambientado anos depois dos eventos terríveis do       <br>
-          aclamado Resident Evil 7 Biohazard, a nova história   <br>
-          começa com Ethan Winters e sua esposa, Mia, vivendo   <br>
-          pacificamente em um novo lugar, livres do pesadelo do <br>
-          passado. Mas quando estavam começando a construir     <br>
-          uma nova vida, ocorre novamente uma tragédia.
-      </p>
-    </div>
-  </div>
-
-<!-- Quebra de linha -->
-<br>
-
-<!-- Titulo para mencionar outros Produtos -->
-<h3> Quem viu esse produto também se interessou por: </h3>
-
-<!-- Quebra de linha -->
-<br>
-
-<!-- Outros produtos -->
   <div class="container">
-    <div class="row marcador align-items-center">
-      <div class="col-sm">
-        <div class="card" style="width: 13rem;">
-          <img class="card-img-top" src="https://images-americanas.b2w.io/produtos/01/00/img/1459449/0/1459449098_1SZ.jpg" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">The Last Of Us Part II</h5>
-            <p class="card-text">R$150,00</p>
-            <a href="#" class="btn btn-primary">Comprar</a>
+    <!-- Card do produto que está a venda -->
+      <div class="text-center">
+        <h1>{{produto.nome | titlecase}}</h1>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6 col-md-3">
+              <img class="imgProduto" [src]="produto.imagem">
+            </div>
           </div>
         </div>
+
+        <br>
+        <h3>{{produto.valorVenda | currency:'BRL'}}</h3>
+        <button class="btn btn-success" (click)="comprar()">
+          Comprar
+        </button>
       </div>
-      <div class="col-sm">
-        <div class="card" style="width: 13rem;">
-          <img class="card-img-top" src="https://images-americanas.b2w.io/produtos/01/00/img/133806/7/133806753_1SZ.jpg" alt="Imagem de capa do card">
+
+      <!-- Quebra de linha -->
+      <br>
+
+      <!-- Link para abrir a descrição do produto -->
+      <ul class="nav nav-tabs">
+        <li class="nav active">
+          <a href="#descricao" data-toggle="tab">Descrição</a>
+        </li>
+      </ul>
+
+      <!-- Descrição do produto -->
+
+      <p> {{produto.descricao | uppercase}}
+
+
+        <!-- Quebra de linha -->
+        <br><br>
+        <br>
+        <br>
+
+
+        <!-- Titulo para mencionar outros Produtos -->
+      <h3> Quem viu esse produto também se interessou por: </h3>
+
+      <!-- Quebra de linha -->
+      <br>
+
+      <!-- Outros produtos -->
+      <div class="row d-flex p-2">
+      <div class="col-sm-4 mb-3" *ngFor="let obj of produtosLista">
+        <div class="card" style="width: 18rem;">
+          <img [src]="obj.imagem" class="card-img-top" alt="produto orgânico">
           <div class="card-body">
-            <h5 class="card-title">Red Dead Redemption 2</h5>
-            <p class="card-text">R$130,00</p>
-            <a href="#" class="btn btn-primary">Comprar</a>
+            <h5 class="card-title"> {{obj.nome | titlecase}} </h5>
+            <p class="card-text"> {{obj.descricao | uppercase}}.</p>
+            <h6>{{obj.valorVenda | currency:'BRL'}}</h6>
+            <button type="button" class="btn btn-warning btn-block" [routerLink]="['/updateproduct', obj.id]">
+              Editar
+            </button>
+
+
+            <a [routerLink]="['/productdescription', obj.id]" class="btn btn-info">
+              Comprar
+            </a>
+
           </div>
         </div>
-      </div>
-      <div class="col-sm">
-        <div class="card" style="width: 13rem;">
-          <img class="card-img-top" src="https://images-americanas.b2w.io/produtos/imagens/1231108713/1231108730_1SZ.jpg" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">O Senhor dos Anéis: A Sociedade do Anel</h5>
-            <p class="card-text">R$30,00</p>
-            <a href="#" class="btn btn-primary">Comprar</a>
-          </div>
-        </div>
+
+
       </div>
     </div>
-  </div>
 
-</div>
-</div>
+    
+  </div>

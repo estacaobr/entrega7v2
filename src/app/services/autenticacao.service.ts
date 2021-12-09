@@ -13,7 +13,7 @@ export class AutenticacaoService {
   constructor(private router: Router, private usuarioService: UsuarioService) { }
 
   public logar(usuario: Usuario) {
-    
+
     this.usuarioService.getAuthUser(usuario).subscribe((usuarioAuth: Usuario[])=>{
       const [user] = usuarioAuth;
       if(user.id){
@@ -22,7 +22,7 @@ export class AutenticacaoService {
         this.router.navigate(['/home'])
       }
     });
-        
+
   }
   public getUserAtual(){
     return this.userAtual;

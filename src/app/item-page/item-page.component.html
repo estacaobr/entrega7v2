@@ -1,6 +1,3 @@
-<!-- <button (click)="mensagem()" type="button">
-    Mensagem
-</button> -->
 <body>
 <div class="text-center">
     <h1>Lista de Livros</h1>
@@ -10,7 +7,7 @@
 <div class="container">
   <div class="text-left mt-5">
     <h2>Promoções</h2>
-    <button type="button" class="btn btn-success" [routerLink]="['/newproduct']">Cadastrar Produto</button>
+    <button type="button" class="btn btn-info" [routerLink]="['/newproduct']">Cadastrar Produto</button>
   </div>
 
   <div class="row d-flex p-2">
@@ -20,22 +17,22 @@
       <div class="card" style="width: 18rem;">
         <img [src]="obj.imagem" class="card-img-top" alt="produto orgânico">
         <div class="card-body">
-          <h5 class="card-title"> {{obj.nome}} </h5>
-          <p class="card-text"> {{obj.descricao}}.</p>
-          <h6>R$ {{obj.valorVenda}}</h6>
-          <p>Teste: {{obj.id}}</p>
+          <h5 class="card-title"> {{obj.nome | titlecase}} </h5>
+          <p class="card-text"> {{obj.descricao | lowercase}}.</p>
+          <h6>{{obj.valorVenda | currency:'BRL'}}</h6>
           <button type="button" class="btn btn-warning btn-block"
           [routerLink]="['/updateproduct', obj.id]">
             Editar
           </button>
 
 
-          <a [routerLink]="['/produto-detalhes', obj.id]" class="btn btn-info">
+          <a [routerLink]="['/productdescription', obj.id]" class="btn btn-success btn-block">
             Comprar
           </a>
 
         </div>
       </div>
+    <!-- </div> -->
 
     </div>
 

@@ -1,4 +1,20 @@
 div.background{
   background-color: #969ab0;
 }
+img.imgProduto{
+  width: 250px  ;
+}
 
+body{
+  background-color: #969ab0;
+}
+
+
+div.card{
+  background-color: transparent;
+}
+
+a{
+  background-color: #03dac6;
+  border-color: #03dac6;
+}
